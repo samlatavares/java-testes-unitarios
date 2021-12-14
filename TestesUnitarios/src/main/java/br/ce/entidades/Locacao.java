@@ -1,4 +1,4 @@
-package br.ce.wcaquino.entidades;
+package br.ce.entidades;
 
 import java.util.Date;
 
