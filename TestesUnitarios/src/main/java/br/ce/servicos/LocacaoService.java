@@ -4,17 +4,28 @@ import static br.ce.utils.DataUtils.adicionarDias;
 
 import java.util.Date;
 
-import org.junit.Assert;
-import org.junit.Test;
-
 import br.ce.entidades.Filme;
 import br.ce.entidades.Locacao;
 import br.ce.entidades.Usuario;
-import br.ce.utils.DataUtils;
+import br.ce.exceptions.FilmeSemEstoqueException;
+import br.ce.exceptions.LocadoraException;
 
 public class LocacaoService {
 	
-	public Locacao alugarFilme(Usuario usuario, Filme filme) {
+	public Locacao alugarFilme(Usuario usuario, Filme filme) throws Exception {
+		
+		if(filme.getEstoque() == 0) {
+			throw new FilmeSemEstoqueException();
+		}
+		
+		if(usuario == null) {
+			throw new LocadoraException("Usuário Vazio!");
+		}
+		
+		if(filme == null) {
+			throw new LocadoraException("Filme Vazio!");
+		}
+		
 		Locacao locacao = new Locacao();
 		locacao.setFilme(filme);
 		locacao.setUsuario(usuario);
