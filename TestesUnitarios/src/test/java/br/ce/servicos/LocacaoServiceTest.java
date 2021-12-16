@@ -16,6 +16,7 @@ import br.ce.entidades.Filme;
 import br.ce.entidades.Locacao;
 import br.ce.entidades.Usuario;
 import br.ce.exceptions.FilmeSemEstoqueException;
+import br.ce.exceptions.LocadoraException;
 import br.ce.utils.DataUtils;
 
 public class LocacaoServiceTest {
@@ -55,7 +56,32 @@ public class LocacaoServiceTest {
 	}
 	
 	@Test 
-	public void testLocacao_usuarioVazio() {
+	public void testLocacao_usuarioVazio() throws FilmeSemEstoqueException {
+		//arrange
+		LocacaoService service = new LocacaoService();
+		Filme filme = new Filme("Pride and Prejudice", 1, 10.0);
+		
+		//act
+		try {
+			service.alugarFilme(null, filme);
+			Assert.fail();
+		} catch (LocadoraException e) {
+			Assert.assertThat(e.getMessage(), is("Usuário Vazio!"));
+		}
+	}
+	
+	@Test 
+	public void testLocacao_filmeVazio() throws LocadoraException, FilmeSemEstoqueException {
+		
+		exception.expect(LocadoraException.class);
+		exception.expectMessage("Filme Vazio!");
+		
+		//arrange
+		LocacaoService service = new LocacaoService();
+		Usuario usuario = new Usuario("Samla");
+		
+		//act
+		service.alugarFilme(usuario, null);
 		
 	}
 	

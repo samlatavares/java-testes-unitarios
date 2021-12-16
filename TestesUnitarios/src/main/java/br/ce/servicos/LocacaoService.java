@@ -12,18 +12,18 @@ import br.ce.exceptions.LocadoraException;
 
 public class LocacaoService {
 	
-	public Locacao alugarFilme(Usuario usuario, Filme filme) throws Exception {
-		
-		if(filme.getEstoque() == 0) {
-			throw new FilmeSemEstoqueException();
-		}
-		
+	public Locacao alugarFilme(Usuario usuario, Filme filme) throws FilmeSemEstoqueException, LocadoraException {
+			
 		if(usuario == null) {
 			throw new LocadoraException("Usuário Vazio!");
 		}
 		
 		if(filme == null) {
 			throw new LocadoraException("Filme Vazio!");
+		}
+		
+		if(filme.getEstoque() == 0) {
+			throw new FilmeSemEstoqueException();
 		}
 		
 		Locacao locacao = new Locacao();
