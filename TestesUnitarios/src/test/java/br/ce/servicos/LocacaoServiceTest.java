@@ -44,11 +44,11 @@ public class LocacaoServiceTest {
 	}
 	
 	@BeforeClass
-	public void beforeClass() {
+	public static void beforeClass() {
 	}
 	
 	@AfterClass
-	public void afterClass() {
+	public static void afterClass() {
 		
 	}
 	
