@@ -6,7 +6,11 @@ import static org.hamcrest.CoreMatchers.not;
 
 import java.util.Date;
 
+import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Assert;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
@@ -21,16 +25,36 @@ import br.ce.utils.DataUtils;
 
 public class LocacaoServiceTest {
 	
+	private LocacaoService service;
+	
 	@Rule
 	public ErrorCollector error = new ErrorCollector();
 	
 	@Rule
 	public ExpectedException exception = ExpectedException.none();
 	
+	@Before
+	public void before() {
+		service = new LocacaoService();
+	}
+	
+	@After
+	public void after() {
+		
+	}
+	
+	@BeforeClass
+	public void beforeClass() {
+	}
+	
+	@AfterClass
+	public void afterClass() {
+		
+	}
+	
 	@Test
 	public void salvarLocacaoTeste() throws Exception {
 		//arrange
-		LocacaoService service = new LocacaoService();
 		Usuario usuario = new Usuario("Samla");
 		Filme filme = new Filme("Pride and Prejudice", 1, 10.0);
 		
@@ -47,7 +71,6 @@ public class LocacaoServiceTest {
 	@Test(expected=FilmeSemEstoqueException.class)
 	public void testLocacao_filmeSemEstoque() throws Exception {
 		//arrange
-		LocacaoService service = new LocacaoService();
 		Usuario usuario = new Usuario("Samla");
 		Filme filme = new Filme("Pride and Prejudice", 0, 10.0);
 		
@@ -77,7 +100,6 @@ public class LocacaoServiceTest {
 		exception.expectMessage("Filme Vazio!");
 		
 		//arrange
-		LocacaoService service = new LocacaoService();
 		Usuario usuario = new Usuario("Samla");
 		
 		//act
