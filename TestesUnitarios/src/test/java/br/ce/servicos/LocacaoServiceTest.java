@@ -55,7 +55,7 @@ public class LocacaoServiceTest {
 	}
 	
 	@Test
-	public void salvarLocacaoTeste() throws Exception {
+	public void deveAlugarFilmeComSucesso() throws Exception {
 		//arrange
 		Usuario usuario = new Usuario("Samla");
 		List<Filme> filmes = Arrays.asList(new Filme("Pride and Prejudice", 1, 10.0));
@@ -71,7 +71,7 @@ public class LocacaoServiceTest {
 	}
 	
 	@Test(expected=FilmeSemEstoqueException.class)
-	public void testLocacao_filmeSemEstoque() throws Exception {
+	public void naoDeveAlugarFilmeSemEstoque() throws Exception {
 		//arrange
 		Usuario usuario = new Usuario("Samla");
 		List<Filme> filmes = Arrays.asList(new Filme("Pride and Prejudice", 0, 10.0));
@@ -81,7 +81,7 @@ public class LocacaoServiceTest {
 	}
 	
 	@Test 
-	public void testLocacao_usuarioVazio() throws FilmeSemEstoqueException {
+	public void naoDeveAlugarFilmeSemUsuario() throws FilmeSemEstoqueException {
 		//arrange
 		LocacaoService service = new LocacaoService();
 		List<Filme> filmes = Arrays.asList(new Filme("Pride and Prejudice", 1, 10.0));
@@ -96,7 +96,7 @@ public class LocacaoServiceTest {
 	}
 	
 	@Test 
-	public void testLocacao_filmeVazio() throws LocadoraException, FilmeSemEstoqueException {
+	public void naoDeveAlugarFilmeSemFilme() throws LocadoraException, FilmeSemEstoqueException {
 		
 		exception.expect(LocadoraException.class);
 		exception.expectMessage("Filme Vazio!");
@@ -106,6 +106,11 @@ public class LocacaoServiceTest {
 		
 		//act
 		service.alugarFilme(usuario, null);
+		
+	}
+	
+	@Test
+	public void devePagar75PctNoTerceiroFilme() {
 		
 	}
 	
