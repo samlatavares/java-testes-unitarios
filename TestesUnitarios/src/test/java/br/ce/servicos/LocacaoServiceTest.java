@@ -3,6 +3,7 @@ package br.ce.servicos;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
+import static org.junit.Assert.assertThat;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -110,8 +111,68 @@ public class LocacaoServiceTest {
 	}
 	
 	@Test
-	public void devePagar75PctNoTerceiroFilme() {
+	public void devePagar75PctNoTerceiroFilme() throws FilmeSemEstoqueException, LocadoraException {
+		//arrange
+		Usuario usuario = new Usuario("Samla");
+		List<Filme> filmes = Arrays.asList(new Filme("Pride and Prejudice", 4, 10.0), 
+										   new Filme("Kiki's Delivery Service", 3, 10.0), 
+										   new Filme("A Quiet Place", 2, 10.0));
 		
+		//act
+		Locacao locacao = service.alugarFilme(usuario, filmes);
+		
+		//assert
+		assertThat(locacao.getValor(), is(27.5));
 	}
 	
+	@Test
+	public void devePagar50PctNoQuartoFilme() throws FilmeSemEstoqueException, LocadoraException {
+		//arrange
+		Usuario usuario = new Usuario("Samla");
+		List<Filme> filmes = Arrays.asList(new Filme("Pride and Prejudice", 4, 10.0), 
+										   new Filme("Kiki's Delivery Service", 3, 10.0), 
+										   new Filme("A Quiet Place", 2, 10.0),
+										   new Filme("Get Out", 2, 10.0));
+		
+		//act
+		Locacao locacao = service.alugarFilme(usuario, filmes);
+		
+		//assert
+		assertThat(locacao.getValor(), is(32.5));
+	}
+	
+	@Test
+	public void devePagar25PctNoQuintoFilme() throws FilmeSemEstoqueException, LocadoraException {
+		//arrange
+		Usuario usuario = new Usuario("Samla");
+		List<Filme> filmes = Arrays.asList(new Filme("Pride and Prejudice", 4, 10.0), 
+										   new Filme("Kiki's Delivery Service", 3, 10.0), 
+										   new Filme("A Quiet Place", 2, 10.0),
+										   new Filme("Get Out", 2, 10.0),
+										   new Filme("The Father", 3, 10.0));
+		
+		//act
+		Locacao locacao = service.alugarFilme(usuario, filmes);
+		
+		//assert
+		assertThat(locacao.getValor(), is(35.0));
+	}
+	
+	@Test
+	public void naoDevePagarOSextoFilme() throws FilmeSemEstoqueException, LocadoraException {
+		//arrange
+		Usuario usuario = new Usuario("Samla");
+		List<Filme> filmes = Arrays.asList(new Filme("Pride and Prejudice", 4, 10.0), 
+										   new Filme("Kiki's Delivery Service", 3, 10.0), 
+										   new Filme("A Quiet Place", 2, 10.0),
+										   new Filme("Get Out", 2, 10.0),
+										   new Filme("The Father", 3, 10.0),
+										   new Filme("He even has your eyes", 1, 0.0));
+		
+		//act
+		Locacao locacao = service.alugarFilme(usuario, filmes);
+		
+		//assert
+		assertThat(locacao.getValor(), is(35.0));
+	}
 }
