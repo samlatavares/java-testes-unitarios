@@ -4,14 +4,17 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
+import org.junit.Assume;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -68,7 +71,13 @@ public class LocacaoServiceTest {
 		error.checkThat(locacao.getValor(), is(equalTo(10.0)));
 		error.checkThat(locacao.getValor(), not(12.0));
 		error.checkThat(DataUtils.isMesmaData(locacao.getDataLocacao(), new Date()), is(true));
-		error.checkThat(DataUtils.isMesmaData(locacao.getDataRetorno(), DataUtils.obterDataComDiferencaDias(1)), is(true));
+		
+		Date dataAtual = new Date();
+		if(DataUtils.verificarDiaSemana(dataAtual, Calendar.SATURDAY)) {
+			error.checkThat(DataUtils.isMesmaData(locacao.getDataRetorno(), DataUtils.obterDataComDiferencaDias(2)), is(true));
+		} else {
+			error.checkThat(DataUtils.isMesmaData(locacao.getDataRetorno(), DataUtils.obterDataComDiferencaDias(1)), is(true));
+		}
 	}
 	
 	@Test(expected=FilmeSemEstoqueException.class)
@@ -174,5 +183,22 @@ public class LocacaoServiceTest {
 		
 		//assert
 		assertThat(locacao.getValor(), is(35.0));
+	}
+	
+	@Test
+	public void deveDevolverNaSegundaAoAlugarNoSabado() throws FilmeSemEstoqueException, LocadoraException {
+		Date dataAtual = new Date();
+		Assume.assumeTrue(DataUtils.verificarDiaSemana(dataAtual, Calendar.SATURDAY));
+				
+		//arrange
+		Usuario usuario = new Usuario("Samla");
+		List<Filme> filmes = Arrays.asList(new Filme("Pride and Prejudice", 1, 10.0));
+		
+		//act
+		Locacao locacao = service.alugarFilme(usuario, filmes);
+		
+		//assert
+		boolean ehSegunda = DataUtils.verificarDiaSemana(locacao.getDataRetorno(), Calendar.MONDAY);
+		assertTrue(ehSegunda);		
 	}
 }
