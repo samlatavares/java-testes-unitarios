@@ -27,6 +27,7 @@ import br.ce.entidades.Locacao;
 import br.ce.entidades.Usuario;
 import br.ce.exceptions.FilmeSemEstoqueException;
 import br.ce.exceptions.LocadoraException;
+import br.ce.servicos.matchers.DiaSemanaMatcher;
 import br.ce.utils.DataUtils;
 
 public class LocacaoServiceTest {
@@ -132,8 +133,7 @@ public class LocacaoServiceTest {
 		//act
 		Locacao locacao = service.alugarFilme(usuario, filmes);
 		
-		//assert
-		boolean ehSegunda = DataUtils.verificarDiaSemana(locacao.getDataRetorno(), Calendar.MONDAY);
-		assertTrue(ehSegunda);		
+		//assert		
+		assertThat(locacao.getDataRetorno(), new DiaSemanaMatcher(Calendar.MONDAY));
 	}
 }
