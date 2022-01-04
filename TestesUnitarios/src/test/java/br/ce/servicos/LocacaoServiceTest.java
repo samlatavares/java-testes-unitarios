@@ -4,7 +4,6 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 import java.util.Calendar;
@@ -27,7 +26,7 @@ import br.ce.entidades.Locacao;
 import br.ce.entidades.Usuario;
 import br.ce.exceptions.FilmeSemEstoqueException;
 import br.ce.exceptions.LocadoraException;
-import br.ce.servicos.matchers.DiaSemanaMatcher;
+import br.ce.servicos.matchers.MatchersProprios;
 import br.ce.utils.DataUtils;
 
 public class LocacaoServiceTest {
@@ -134,6 +133,6 @@ public class LocacaoServiceTest {
 		Locacao locacao = service.alugarFilme(usuario, filmes);
 		
 		//assert		
-		assertThat(locacao.getDataRetorno(), new DiaSemanaMatcher(Calendar.MONDAY));
+		assertThat(locacao.getDataRetorno(), MatchersProprios.caiNumaSegunda());
 	}
 }
