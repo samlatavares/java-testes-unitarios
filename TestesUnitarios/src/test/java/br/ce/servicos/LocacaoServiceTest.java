@@ -4,6 +4,9 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertThat;
+import static br.ce.servicos.matchers.MatchersProprios.caiNumaSegunda;
+import static br.ce.servicos.matchers.MatchersProprios.ehDataComDiferencaDias;
+import static br.ce.servicos.matchers.MatchersProprios.ehHoje;
 
 import java.util.Arrays;
 import java.util.Calendar;
@@ -26,7 +29,7 @@ import br.ce.entidades.Locacao;
 import br.ce.entidades.Usuario;
 import br.ce.exceptions.FilmeSemEstoqueException;
 import br.ce.exceptions.LocadoraException;
-import br.ce.servicos.matchers.MatchersProprios;
+
 import br.ce.utils.DataUtils;
 
 public class LocacaoServiceTest {
@@ -70,13 +73,13 @@ public class LocacaoServiceTest {
 		//assert
 		error.checkThat(locacao.getValor(), is(equalTo(10.0)));
 		error.checkThat(locacao.getValor(), not(12.0));
-		error.checkThat(DataUtils.isMesmaData(locacao.getDataLocacao(), new Date()), is(true));
+		error.checkThat(locacao.getDataLocacao(), ehHoje());
 		
 		Date dataAtual = new Date();
 		if(DataUtils.verificarDiaSemana(dataAtual, Calendar.SATURDAY)) {
-			error.checkThat(DataUtils.isMesmaData(locacao.getDataRetorno(), DataUtils.obterDataComDiferencaDias(2)), is(true));
+			error.checkThat(locacao.getDataRetorno(), ehDataComDiferencaDias(2));
 		} else {
-			error.checkThat(DataUtils.isMesmaData(locacao.getDataRetorno(), DataUtils.obterDataComDiferencaDias(1)), is(true));
+			error.checkThat(locacao.getDataRetorno(), ehDataComDiferencaDias(1));
 		}
 	}
 	
@@ -133,6 +136,6 @@ public class LocacaoServiceTest {
 		Locacao locacao = service.alugarFilme(usuario, filmes);
 		
 		//assert		
-		assertThat(locacao.getDataRetorno(), MatchersProprios.caiNumaSegunda());
+		assertThat(locacao.getDataRetorno(), caiNumaSegunda());
 	}
 }
