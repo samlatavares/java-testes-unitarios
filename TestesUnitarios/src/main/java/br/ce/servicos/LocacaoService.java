@@ -6,6 +6,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import br.ce.daos.LocacaoDAO;
 import br.ce.entidades.Filme;
 import br.ce.entidades.Locacao;
 import br.ce.entidades.Usuario;
@@ -14,6 +15,8 @@ import br.ce.exceptions.LocadoraException;
 import br.ce.utils.DataUtils;
 
 public class LocacaoService {
+	
+	private LocacaoDAO dao;
 	
 	public Locacao alugarFilme(Usuario usuario, List<Filme> filmes) throws FilmeSemEstoqueException, LocadoraException {
 			
@@ -65,7 +68,7 @@ public class LocacaoService {
 		locacao.setDataRetorno(dataEntrega);
 		
 		//Salvando a locacao...	
-		//TODO adicionar método para salvar
+		dao.salvar(locacao);
 		
 		return locacao;
 	}
