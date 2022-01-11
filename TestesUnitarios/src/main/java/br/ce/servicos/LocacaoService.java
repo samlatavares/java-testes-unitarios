@@ -33,7 +33,7 @@ public class LocacaoService {
 
 		
 		Locacao locacao = new Locacao();
-		locacao.setFilme(filmes);
+		locacao.setFilmes(filmes);
 		locacao.setUsuario(usuario);
 		locacao.setDataLocacao(new Date());
 		

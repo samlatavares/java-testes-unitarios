@@ -11,7 +11,7 @@ public class UsuarioBuilder {
 	}
 	
 	//Estático para que possa ser chamado externamente sem necessidade de instanciar o builder
-	public static UsuarioBuilder getUsuario() {
+	public static UsuarioBuilder getUsuarioBuilder() {
 		UsuarioBuilder builder = new UsuarioBuilder();
 		builder.usuario = new Usuario();
 		builder.usuario.setNome("Sam");
@@ -19,7 +19,7 @@ public class UsuarioBuilder {
 	}
 	
 	//Chaining method
-	public Usuario agora() {
+	public Usuario getUsuario() {
 		return usuario;
 	}
 }

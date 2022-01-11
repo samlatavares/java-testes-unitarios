@@ -4,7 +4,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertThat;
-import static br.ce.builders.UsuarioBuilder.getUsuario;
+import static br.ce.builders.UsuarioBuilder.getUsuarioBuilder;
 import static br.ce.servicos.matchers.MatchersProprios.caiNumaSegunda;
 import static br.ce.servicos.matchers.MatchersProprios.ehDataComDiferencaDias;
 import static br.ce.servicos.matchers.MatchersProprios.ehHoje;
@@ -33,6 +33,7 @@ import br.ce.exceptions.FilmeSemEstoqueException;
 import br.ce.exceptions.LocadoraException;
 
 import br.ce.utils.DataUtils;
+import buildermaster.BuilderMaster;
 
 public class LocacaoServiceTest {
 	
@@ -66,7 +67,7 @@ public class LocacaoServiceTest {
 	@Test
 	public void deveAlugarFilmeComSucesso() throws Exception {
 		//arrange
-		Usuario usuario = getUsuario().agora();
+		Usuario usuario = getUsuarioBuilder().getUsuario();
 		List<Filme> filmes = Arrays.asList(new Filme("Pride and Prejudice", 1, 10.0));
 		
 		//act
@@ -88,7 +89,7 @@ public class LocacaoServiceTest {
 	@Test(expected=FilmeSemEstoqueException.class)
 	public void naoDeveAlugarFilmeSemEstoque() throws Exception {
 		//arrange
-		Usuario usuario = getUsuario().agora();
+		Usuario usuario = getUsuarioBuilder().getUsuario();
 		List<Filme> filmes = Arrays.asList(new Filme("Pride and Prejudice", 0, 10.0));
 		
 		//act
@@ -117,7 +118,7 @@ public class LocacaoServiceTest {
 		exception.expectMessage("Filme Vazio!");
 		
 		//arrange
-		Usuario usuario = getUsuario().agora();
+		Usuario usuario = getUsuarioBuilder().getUsuario();
 		
 		//act
 		service.alugarFilme(usuario, null);
@@ -131,7 +132,7 @@ public class LocacaoServiceTest {
 		Assume.assumeTrue(DataUtils.verificarDiaSemana(dataAtual, Calendar.SATURDAY));
 				
 		//arrange
-		Usuario usuario = getUsuario().agora();
+		Usuario usuario = getUsuarioBuilder().getUsuario();
 		List<Filme> filmes = Arrays.asList(new Filme("Pride and Prejudice", 1, 10.0));
 		
 		//act
@@ -139,5 +140,9 @@ public class LocacaoServiceTest {
 		
 		//assert		
 		assertThat(locacao.getDataRetorno(), caiNumaSegunda());
+	}
+	
+	public static void main(String[] args) {
+		new BuilderMaster().gerarCodigoClasse(Locacao.class);
 	}
 }

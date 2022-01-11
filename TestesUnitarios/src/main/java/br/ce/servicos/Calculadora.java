@@ -20,5 +20,15 @@ public class Calculadora {
 		
 		return a/b;
 	}
-
+	
+	public int dividir(String a, String b) throws NaoPodeDividirPorZeroException {
+		int primeiro = Integer.valueOf(a);
+		int segundo = Integer.valueOf(b);
+		
+		if(segundo == 0) {
+			throw new NaoPodeDividirPorZeroException();
+		}
+		
+		return primeiro/segundo;
+	}
 }

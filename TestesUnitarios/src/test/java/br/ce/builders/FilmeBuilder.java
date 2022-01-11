@@ -10,7 +10,7 @@ public class FilmeBuilder {
 		
 	}
 	
-	public static FilmeBuilder getFilme() {
+	public static FilmeBuilder getFilmeBuilder() {
 		FilmeBuilder builder = new FilmeBuilder();
 		builder.filme = new Filme();
 		builder.filme.setEstoque(2);
@@ -19,7 +19,7 @@ public class FilmeBuilder {
 		return builder;
 	}
 	
-	public Filme agora() {
+	public Filme getFilme() {
 		return filme;
 	}
 }
