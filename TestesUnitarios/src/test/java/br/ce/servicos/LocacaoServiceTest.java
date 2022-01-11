@@ -1,13 +1,13 @@
 package br.ce.servicos;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.not;
-import static org.junit.Assert.assertThat;
 import static br.ce.builders.UsuarioBuilder.getUsuarioBuilder;
 import static br.ce.servicos.matchers.MatchersProprios.caiNumaSegunda;
 import static br.ce.servicos.matchers.MatchersProprios.ehDataComDiferencaDias;
 import static br.ce.servicos.matchers.MatchersProprios.ehHoje;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.not;
+import static org.junit.Assert.assertThat;
 
 import java.util.Arrays;
 import java.util.Calendar;
@@ -25,13 +25,13 @@ import org.junit.Test;
 import org.junit.rules.ErrorCollector;
 import org.junit.rules.ExpectedException;
 
-import br.ce.builders.UsuarioBuilder;
+import br.ce.daos.LocacaoDAO;
+import br.ce.daos.LocacaoDAOFake;
 import br.ce.entidades.Filme;
 import br.ce.entidades.Locacao;
 import br.ce.entidades.Usuario;
 import br.ce.exceptions.FilmeSemEstoqueException;
 import br.ce.exceptions.LocadoraException;
-
 import br.ce.utils.DataUtils;
 import buildermaster.BuilderMaster;
 
@@ -48,6 +48,8 @@ public class LocacaoServiceTest {
 	@Before
 	public void before() {
 		service = new LocacaoService();
+		LocacaoDAO dao = new LocacaoDAOFake();
+		service.setLocacaoDAO(dao);
 	}
 	
 	@After
@@ -145,4 +147,5 @@ public class LocacaoServiceTest {
 	public static void main(String[] args) {
 		new BuilderMaster().gerarCodigoClasse(Locacao.class);
 	}
+
 }

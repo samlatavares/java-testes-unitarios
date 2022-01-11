@@ -14,6 +14,8 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
 
+import br.ce.daos.LocacaoDAO;
+import br.ce.daos.LocacaoDAOFake;
 import br.ce.entidades.Filme;
 import br.ce.entidades.Locacao;
 import br.ce.entidades.Usuario;
@@ -37,6 +39,8 @@ public class CalculoValorLocacaoTest {
 	@Before
 	public void before() {
 		service = new LocacaoService();
+		LocacaoDAO dao = new LocacaoDAOFake();
+		service.setLocacaoDAO(dao);
 	}
 	
 	private static Filme filme1 = new Filme("Pride and Prejudice", 4, 10.0);
