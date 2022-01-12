@@ -18,6 +18,11 @@ public class UsuarioBuilder {
 		return builder;
 	}
 	
+	public UsuarioBuilder getUsuarioBuilder(String nome) {
+		usuario.setNome(nome);
+		return this;
+	}
+	
 	//Chaining method
 	public Usuario getUsuario() {
 		return usuario;
