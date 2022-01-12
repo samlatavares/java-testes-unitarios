@@ -13,6 +13,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
+import org.mockito.Mockito;
 
 import br.ce.daos.LocacaoDAO;
 import br.ce.daos.LocacaoDAOFake;
@@ -26,6 +27,8 @@ import br.ce.exceptions.LocadoraException;
 public class CalculoValorLocacaoTest {
 
 	private LocacaoService service;
+	private LocacaoDAO dao;
+	private SPCService spc;
 	
 	@Parameter
 	public List<Filme> filmes;
@@ -39,8 +42,12 @@ public class CalculoValorLocacaoTest {
 	@Before
 	public void before() {
 		service = new LocacaoService();
-		LocacaoDAO dao = new LocacaoDAOFake();
+		
+		dao = new LocacaoDAOFake();
 		service.setLocacaoDAO(dao);
+		
+		spc = Mockito.mock(SPCService.class);
+		service.setSPCService(spc);
 	}
 	
 	private static Filme filme1 = new Filme("Pride and Prejudice", 4, 10.0);

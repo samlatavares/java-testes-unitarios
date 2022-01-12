@@ -39,6 +39,8 @@ import buildermaster.BuilderMaster;
 public class LocacaoServiceTest {
 	
 	private LocacaoService service;
+	private SPCService spc;
+	private LocacaoDAO dao;
 	
 	@Rule
 	public ErrorCollector error = new ErrorCollector();
@@ -49,8 +51,12 @@ public class LocacaoServiceTest {
 	@Before
 	public void before() {
 		service = new LocacaoService();
-		LocacaoDAO dao = Mockito.mock(LocacaoDAO.class);
+		
+		dao = Mockito.mock(LocacaoDAO.class);
 		service.setLocacaoDAO(dao);
+		
+		spc = Mockito.mock(SPCService.class);
+		service.setSPCService(spc);
 	}
 	
 	@After
@@ -143,6 +149,20 @@ public class LocacaoServiceTest {
 		
 		//assert		
 		assertThat(locacao.getDataRetorno(), caiNumaSegunda());
+	}
+	
+	@Test
+	public void naoDeveAlugarFilmeParaNegativadoSPC() throws FilmeSemEstoqueException, LocadoraException {
+		//arrange
+		Usuario usuario = getUsuarioBuilder().getUsuario();
+		
+		Mockito.when(spc.possuiNegativacao(usuario)).thenReturn(true);
+		
+		exception.expect(LocadoraException.class);
+		exception.expectMessage("Usuário Negativado!");
+		
+		//act
+		service.alugarFilme(usuario, Arrays.asList(new Filme("Pride and Prejudice", 1, 10.0)));
 	}
 	
 	public static void main(String[] args) {
