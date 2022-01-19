@@ -168,6 +168,9 @@ public class LocacaoServiceTest {
 		
 		//act
 		service.alugarFilme(usuario, Arrays.asList(new Filme("Pride and Prejudice", 1, 10.0)));
+		
+		//assert
+		Mockito.verify(spc).possuiNegativacao(usuario);
 	}
 	
 	@Test
