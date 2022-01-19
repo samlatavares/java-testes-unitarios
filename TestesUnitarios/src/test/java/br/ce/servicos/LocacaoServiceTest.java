@@ -174,7 +174,7 @@ public class LocacaoServiceTest {
 	public void deveEnviarEmailParaLocacoesAtrasadas() {
 		//arrange
 		Usuario usuario = getUsuarioBuilder().getUsuario();
-		List<Locacao> locacoes = Arrays.asList(umLocacao().comDataRetorno(DataUtils.obterDataComDiferencaDias(-2)).agora());
+		List<Locacao> locacoes = Arrays.asList(umLocacao().comUsuario(usuario).comDataRetorno(DataUtils.obterDataComDiferencaDias(-2)).agora());
 		when(dao.obterLocacoesPendentes()).thenReturn(locacoes);
 			
 		//act
