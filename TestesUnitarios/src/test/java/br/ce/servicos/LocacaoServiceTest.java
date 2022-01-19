@@ -1,5 +1,6 @@
 package br.ce.servicos;
 
+import static br.ce.builders.LocacaoBuilder.umLocacao;
 import static br.ce.builders.UsuarioBuilder.getUsuarioBuilder;
 import static br.ce.servicos.matchers.MatchersProprios.caiNumaSegunda;
 import static br.ce.servicos.matchers.MatchersProprios.ehDataComDiferencaDias;
@@ -8,6 +9,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
 import java.util.Calendar;
@@ -27,7 +29,6 @@ import org.junit.rules.ExpectedException;
 import org.mockito.Mockito;
 
 import br.ce.daos.LocacaoDAO;
-import br.ce.daos.LocacaoDAOFake;
 import br.ce.entidades.Filme;
 import br.ce.entidades.Locacao;
 import br.ce.entidades.Usuario;
@@ -41,6 +42,7 @@ public class LocacaoServiceTest {
 	private LocacaoService service;
 	private SPCService spc;
 	private LocacaoDAO dao;
+	private EmailService email;
 	
 	@Rule
 	public ErrorCollector error = new ErrorCollector();
@@ -57,6 +59,9 @@ public class LocacaoServiceTest {
 		
 		spc = Mockito.mock(SPCService.class);
 		service.setSPCService(spc);
+		
+		email = Mockito.mock(EmailService.class);
+		service.setEmailService(email);
 	}
 	
 	@After
@@ -163,6 +168,20 @@ public class LocacaoServiceTest {
 		
 		//act
 		service.alugarFilme(usuario, Arrays.asList(new Filme("Pride and Prejudice", 1, 10.0)));
+	}
+	
+	@Test
+	public void deveEnviarEmailParaLocacoesAtrasadas() {
+		//arrange
+		Usuario usuario = getUsuarioBuilder().getUsuario();
+		List<Locacao> locacoes = Arrays.asList(umLocacao().comDataRetorno(DataUtils.obterDataComDiferencaDias(-2)).agora());
+		when(dao.obterLocacoesPendentes()).thenReturn(locacoes);
+			
+		//act
+		service.notificarAtrasos();
+		
+		//assert
+		Mockito.verify(email).notificarAtraso(usuario);
 	}
 	
 	public static void main(String[] args) {
