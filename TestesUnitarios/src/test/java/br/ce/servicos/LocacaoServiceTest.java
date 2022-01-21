@@ -162,6 +162,7 @@ public class LocacaoServiceTest {
 		Usuario usuario = getUsuarioBuilder().agora();
 		
 		Mockito.when(spc.possuiNegativacao(usuario)).thenReturn(true);
+		Mockito.when(spc.possuiNegativacao(Mockito.any(Usuario.class))).thenReturn(true); //opção mais genérica - matcher
 		
 		//act
 		try {
@@ -184,6 +185,7 @@ public class LocacaoServiceTest {
 		Usuario usuarioAtrasadoTb = getUsuarioBuilder().comNome("Outro atrasado").agora();
 		List<Locacao> locacoes = Arrays.asList(umLocacao().atrasada().comUsuario(usuarioAtrasado).agora(),
 												umLocacao().comUsuario(usuarioEmDia).agora(),
+												umLocacao().atrasada().comUsuario(usuarioAtrasadoTb).agora(),
 												umLocacao().atrasada().comUsuario(usuarioAtrasadoTb).agora());
 		when(dao.obterLocacoesPendentes()).thenReturn(locacoes);
 			
@@ -191,9 +193,10 @@ public class LocacaoServiceTest {
 		service.notificarAtrasos();
 		
 		//assert
+		Mockito.verify(email, Mockito.times(3)).notificarAtraso(Mockito.any(Usuario.class)); //matcher
 		Mockito.verify(email).notificarAtraso(usuarioAtrasado);
 		Mockito.verify(email, Mockito.never()).notificarAtraso(usuarioEmDia);
-		Mockito.verify(email).notificarAtraso(usuarioAtrasadoTb);
+		Mockito.verify(email, Mockito.times(2)).notificarAtraso(usuarioAtrasadoTb);
 		Mockito.verifyNoMoreInteractions(email);
 	}
 	
