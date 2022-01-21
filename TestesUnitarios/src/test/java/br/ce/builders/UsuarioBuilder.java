@@ -24,7 +24,7 @@ public class UsuarioBuilder {
 	}
 	
 	//Chaining method
-	public Usuario getUsuario() {
+	public Usuario agora() {
 		return usuario;
 	}
 }

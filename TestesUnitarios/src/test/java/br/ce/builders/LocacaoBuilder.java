@@ -29,7 +29,7 @@ public class LocacaoBuilder {
 		builder.elemento = new Locacao();
 		Locacao elemento = builder.elemento;
 		
-		elemento.setUsuario(getUsuarioBuilder().getUsuario());
+		elemento.setUsuario(getUsuarioBuilder().agora());
 		
 		elemento.setFilmes(Arrays.asList(getFilmeBuilder().getFilme()));
 		elemento.setDataLocacao(new Date());

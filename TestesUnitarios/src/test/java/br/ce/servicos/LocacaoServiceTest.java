@@ -81,7 +81,7 @@ public class LocacaoServiceTest {
 	@Test
 	public void deveAlugarFilmeComSucesso() throws Exception {
 		//arrange
-		Usuario usuario = getUsuarioBuilder().getUsuario();
+		Usuario usuario = getUsuarioBuilder().agora();
 		List<Filme> filmes = Arrays.asList(new Filme("Pride and Prejudice", 1, 10.0));
 		
 		//act
@@ -103,7 +103,7 @@ public class LocacaoServiceTest {
 	@Test(expected=FilmeSemEstoqueException.class)
 	public void naoDeveAlugarFilmeSemEstoque() throws Exception {
 		//arrange
-		Usuario usuario = getUsuarioBuilder().getUsuario();
+		Usuario usuario = getUsuarioBuilder().agora();
 		List<Filme> filmes = Arrays.asList(new Filme("Pride and Prejudice", 0, 10.0));
 		
 		//act
@@ -132,7 +132,7 @@ public class LocacaoServiceTest {
 		exception.expectMessage("Filme Vazio!");
 		
 		//arrange
-		Usuario usuario = getUsuarioBuilder().getUsuario();
+		Usuario usuario = getUsuarioBuilder().agora();
 		
 		//act
 		service.alugarFilme(usuario, null);
@@ -146,7 +146,7 @@ public class LocacaoServiceTest {
 		Assume.assumeTrue(DataUtils.verificarDiaSemana(dataAtual, Calendar.SATURDAY));
 				
 		//arrange
-		Usuario usuario = getUsuarioBuilder().getUsuario();
+		Usuario usuario = getUsuarioBuilder().agora();
 		List<Filme> filmes = Arrays.asList(new Filme("Pride and Prejudice", 1, 10.0));
 		
 		//act
@@ -159,7 +159,7 @@ public class LocacaoServiceTest {
 	@Test
 	public void naoDeveAlugarFilmeParaNegativadoSPC() throws FilmeSemEstoqueException {
 		//arrange
-		Usuario usuario = getUsuarioBuilder().getUsuario();
+		Usuario usuario = getUsuarioBuilder().agora();
 		
 		Mockito.when(spc.possuiNegativacao(usuario)).thenReturn(true);
 		
@@ -179,9 +179,9 @@ public class LocacaoServiceTest {
 	@Test
 	public void deveEnviarEmailParaLocacoesAtrasadas() {
 		//arrange
-		Usuario usuarioAtrasado = getUsuarioBuilder().getUsuario();
-		Usuario usuarioEmDia = getUsuarioBuilder().comNome("Usuário em dia").getUsuario();
-		Usuario usuarioAtrasadoTb = getUsuarioBuilder().comNome("Outro atrasado").getUsuario();
+		Usuario usuarioAtrasado = getUsuarioBuilder().agora();
+		Usuario usuarioEmDia = getUsuarioBuilder().comNome("Usuário em dia").agora();
+		Usuario usuarioAtrasadoTb = getUsuarioBuilder().comNome("Outro atrasado").agora();
 		List<Locacao> locacoes = Arrays.asList(umLocacao().atrasada().comUsuario(usuarioAtrasado).agora(),
 												umLocacao().comUsuario(usuarioEmDia).agora(),
 												umLocacao().atrasada().comUsuario(usuarioAtrasadoTb).agora());
