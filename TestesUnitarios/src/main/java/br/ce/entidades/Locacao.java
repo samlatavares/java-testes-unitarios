@@ -11,6 +11,12 @@ public class Locacao {
 	private Date dataRetorno;
 	private Double valor;
 	
+	public List<Filme> getFilmes() {
+		return filmes;
+	}
+	public Usuario setFilmes() {
+		return usuario;
+	}
 	public Usuario getUsuario() {
 		return usuario;
 	}

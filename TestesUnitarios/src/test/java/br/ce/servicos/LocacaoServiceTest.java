@@ -3,7 +3,7 @@ package br.ce.servicos;
 import static br.ce.builders.LocacaoBuilder.umLocacao;
 import static br.ce.builders.UsuarioBuilder.getUsuarioBuilder;
 import static br.ce.servicos.matchers.MatchersProprios.caiNumaSegunda;
-import static br.ce.servicos.matchers.MatchersProprios.ehDataComDiferencaDias;
+import static br.ce.servicos.matchers.MatchersProprios.ehHojeComDiferencaDias;
 import static br.ce.servicos.matchers.MatchersProprios.ehHoje;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
@@ -26,11 +26,13 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
 import org.junit.rules.ExpectedException;
+import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
+import br.ce.builders.LocacaoBuilder;
 import br.ce.daos.LocacaoDAO;
 import br.ce.entidades.Filme;
 import br.ce.entidades.Locacao;
@@ -105,9 +107,9 @@ public class LocacaoServiceTest {
 		
 		Date dataAtual = new Date();
 		if(DataUtils.verificarDiaSemana(dataAtual, Calendar.SATURDAY)) {
-			error.checkThat(locacao.getDataRetorno(), ehDataComDiferencaDias(2));
+			error.checkThat(locacao.getDataRetorno(), ehHojeComDiferencaDias(2));
 		} else {
-			error.checkThat(locacao.getDataRetorno(), ehDataComDiferencaDias(1));
+			error.checkThat(locacao.getDataRetorno(), ehHojeComDiferencaDias(1));
 		}
 	}
 	
@@ -225,6 +227,25 @@ public class LocacaoServiceTest {
 		
 		//act
 		service.alugarFilme(usuario,  filmes);
+		
+	}
+	
+	@Test
+	public void deveProrrogarUmaLocacao() {
+		//arrange
+		Locacao locacao = LocacaoBuilder.umLocacao().agora();
+		
+		//act
+		service.prorrogarLocacao(locacao, 3);
+		
+		//assert
+		ArgumentCaptor<Locacao> argumentCaptor = ArgumentCaptor.forClass(Locacao.class);
+		Mockito.verify(dao).salvar(argumentCaptor.capture());
+		Locacao locacaoRetornada = argumentCaptor.getValue();
+		
+		error.checkThat(locacaoRetornada.getValor(), is(12.0));
+		error.checkThat(locacaoRetornada.getDataLocacao(), ehHoje());
+		error.checkThat(locacaoRetornada.getDataRetorno(), ehHojeComDiferencaDias(3));
 		
 	}
 	

@@ -12,7 +12,7 @@ public class MatchersProprios {
 		return new DiaSemanaMatcher(Calendar.MONDAY);
 	}
 	
-	public static DataDiferencaDiasMatcher ehDataComDiferencaDias(Integer quantidadeDias) {
+	public static DataDiferencaDiasMatcher ehHojeComDiferencaDias(Integer quantidadeDias) {
 		return new DataDiferencaDiasMatcher(quantidadeDias);
 	}
 	
