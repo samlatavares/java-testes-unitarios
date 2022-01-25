@@ -3,8 +3,8 @@ package br.ce.servicos;
 import static br.ce.builders.LocacaoBuilder.umLocacao;
 import static br.ce.builders.UsuarioBuilder.getUsuarioBuilder;
 import static br.ce.servicos.matchers.MatchersProprios.caiNumaSegunda;
-import static br.ce.servicos.matchers.MatchersProprios.ehHojeComDiferencaDias;
 import static br.ce.servicos.matchers.MatchersProprios.ehHoje;
+import static br.ce.servicos.matchers.MatchersProprios.ehHojeComDiferencaDias;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
@@ -19,18 +19,22 @@ import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
-import org.junit.Assume;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
 import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PowerMockIgnore;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
 
 import br.ce.builders.LocacaoBuilder;
 import br.ce.daos.LocacaoDAO;
@@ -42,6 +46,11 @@ import br.ce.exceptions.LocadoraException;
 import br.ce.utils.DataUtils;
 import buildermaster.BuilderMaster;
 
+@RunWith(PowerMockRunner.class)
+@PrepareForTest({LocacaoService.class, DataUtils.class})
+@PowerMockIgnore({"javax.management.", "com.sun.org.apache.xerces.", 
+				  "javax.xml.", "org.xml.", "org.w3c.dom.", "jdk.internal.reflect.*",
+				  "com.sun.org.apache.xalan.", "javax.activation.*"})
 public class LocacaoServiceTest {
 	
 	@InjectMocks
@@ -154,13 +163,15 @@ public class LocacaoServiceTest {
 	
 	
 	@Test
-	public void deveDevolverNaSegundaAoAlugarNoSabado() throws FilmeSemEstoqueException, LocadoraException {
-		Date dataAtual = new Date();
-		Assume.assumeTrue(DataUtils.verificarDiaSemana(dataAtual, Calendar.SATURDAY));
+	public void deveDevolverNaSegundaAoAlugarNoSabado() throws Exception {
+//		Date dataAtual = new Date();
+//		Assume.assumeTrue(DataUtils.verificarDiaSemana(dataAtual, Calendar.SATURDAY));
 				
 		//arrange
 		Usuario usuario = getUsuarioBuilder().agora();
 		List<Filme> filmes = Arrays.asList(new Filme("Pride and Prejudice", 1, 10.0));
+		
+		PowerMockito.whenNew(Date.class).withNoArguments().thenReturn(DataUtils.obterData(29, 1, 2022));
 		
 		//act
 		Locacao locacao = service.alugarFilme(usuario, filmes);
