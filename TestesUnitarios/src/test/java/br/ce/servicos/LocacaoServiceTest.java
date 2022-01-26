@@ -72,6 +72,7 @@ public class LocacaoServiceTest {
 	@Before
 	public void before() {
 		MockitoAnnotations.initMocks(this);
+		service = PowerMockito.spy(service);
 		
 //		service = new LocacaoService();		
 //		dao = Mockito.mock(LocacaoDAO.class);
@@ -260,7 +261,7 @@ public class LocacaoServiceTest {
 		exception.expectMessage("Problemas com o SPC, tente novamente!");
 		
 		//act
-		service.alugarFilme(usuario,  filmes);
+		service.alugarFilme(usuario, filmes);
 		
 	}
 	
@@ -281,6 +282,22 @@ public class LocacaoServiceTest {
 		error.checkThat(locacaoRetornada.getDataLocacao(), ehHoje());
 		error.checkThat(locacaoRetornada.getDataRetorno(), ehHojeComDiferencaDias(3));
 		
+	}
+	
+	@Test
+	public void deveAlugarFilmeSemCalcularOValor() throws Exception {
+		//arrange
+		Usuario usuario = getUsuarioBuilder().agora();
+		List<Filme> filmes = Arrays.asList(new Filme("Pride and Prejudice", 1, 10.0));
+		
+		PowerMockito.doReturn(1.0).when(service, "calcularValorLocacao", filmes); // Mockando o retorno do método
+			
+		//act
+		Locacao locacao = service.alugarFilme(usuario, filmes);
+		
+		//assert
+		Assert.assertThat(locacao.getValor(), is(1.0));
+		PowerMockito.verifyPrivate(service).invoke("calcularValorLocacao", filmes); //Verificando se o método foi chamado
 	}
 	
 	public static void main(String[] args) {
