@@ -24,6 +24,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
 import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -38,10 +39,11 @@ import br.ce.entidades.Locacao;
 import br.ce.entidades.Usuario;
 import br.ce.exceptions.FilmeSemEstoqueException;
 import br.ce.exceptions.LocadoraException;
+import br.ce.runners.ParallelRunner;
 import br.ce.utils.DataUtils;
 import buildermaster.BuilderMaster;
 
-
+//@RunWith(ParallelRunner.class)
 public class LocacaoServiceTest {
 	
 	@InjectMocks @Spy
@@ -275,8 +277,8 @@ public class LocacaoServiceTest {
 		
 	}
 	
-	public static void main(String[] args) {
-		new BuilderMaster().gerarCodigoClasse(Locacao.class);
-	}
+//	public static void main(String[] args) {
+//		new BuilderMaster().gerarCodigoClasse(Locacao.class);
+//	}
 
 }

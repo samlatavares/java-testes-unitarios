@@ -10,7 +10,7 @@ import br.ce.exceptions.NaoPodeDividirPorZeroException;
 import br.ce.runners.ParallelRunner;
 
 
-@RunWith(ParallelRunner.class)
+//@RunWith(ParallelRunner.class)
 public class CalculadoraTest {
 
 	private Calculadora calculadora;
