@@ -1,6 +1,5 @@
 package br.ce.servicos;
 
-import static br.ce.builders.LocacaoBuilder.umLocacao;
 import static br.ce.builders.UsuarioBuilder.getUsuarioBuilder;
 import static br.ce.servicos.matchers.MatchersProprios.caiNumaSegunda;
 import static br.ce.servicos.matchers.MatchersProprios.ehHoje;
@@ -9,7 +8,6 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertThat;
-import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
 import java.util.Calendar;
@@ -26,7 +24,6 @@ import org.junit.Test;
 import org.junit.rules.ErrorCollector;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
-import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -37,15 +34,11 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import org.powermock.reflect.Whitebox;
 
-import br.ce.builders.LocacaoBuilder;
 import br.ce.daos.LocacaoDAO;
 import br.ce.entidades.Filme;
 import br.ce.entidades.Locacao;
 import br.ce.entidades.Usuario;
-import br.ce.exceptions.FilmeSemEstoqueException;
-import br.ce.exceptions.LocadoraException;
 import br.ce.utils.DataUtils;
-import buildermaster.BuilderMaster;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({LocacaoService.class/*, DataUtils.class*/})

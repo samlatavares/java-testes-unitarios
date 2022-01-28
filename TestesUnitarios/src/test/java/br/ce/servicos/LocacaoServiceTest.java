@@ -41,7 +41,6 @@ import br.ce.exceptions.FilmeSemEstoqueException;
 import br.ce.exceptions.LocadoraException;
 import br.ce.runners.ParallelRunner;
 import br.ce.utils.DataUtils;
-import buildermaster.BuilderMaster;
 
 //@RunWith(ParallelRunner.class)
 public class LocacaoServiceTest {
@@ -278,7 +277,6 @@ public class LocacaoServiceTest {
 	}
 	
 //	public static void main(String[] args) {
-//		new BuilderMaster().gerarCodigoClasse(Locacao.class);
-//	}
-
+//	new BuilderMaster().gerarCodigoClasse(Locacao.class);
+//}
 }

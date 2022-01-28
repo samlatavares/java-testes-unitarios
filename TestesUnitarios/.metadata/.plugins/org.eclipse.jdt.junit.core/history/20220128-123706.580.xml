@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="LocacaoServiceTest_PowerMock" project="TestesUnitarios" tests="4" started="4" failures="0" errors="0" ignored="0">
-  <testsuite name="br.ce.servicos.LocacaoServiceTest_PowerMock" time="0.328">
-    <testcase name="deveDevolverNaSegundaAoAlugarNoSabado" classname="br.ce.servicos.LocacaoServiceTest_PowerMock" time="0.293"/>
-    <testcase name="deveAlugarFilmeSemCalcularOValor" classname="br.ce.servicos.LocacaoServiceTest_PowerMock" time="0.017"/>
-    <testcase name="deveAlugarFilmeComSucesso" classname="br.ce.servicos.LocacaoServiceTest_PowerMock" time="0.01"/>
-    <testcase name="deveCalcularValorLocacao" classname="br.ce.servicos.LocacaoServiceTest_PowerMock" time="0.006"/>
-  </testsuite>
-</testrun>
