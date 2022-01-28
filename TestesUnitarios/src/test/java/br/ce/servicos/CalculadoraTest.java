@@ -1,13 +1,16 @@
 package br.ce.servicos;
 
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import br.ce.exceptions.NaoPodeDividirPorZeroException;
+import br.ce.runners.ParallelRunner;
 
 
-
+@RunWith(ParallelRunner.class)
 public class CalculadoraTest {
 
 	private Calculadora calculadora;
@@ -15,6 +18,12 @@ public class CalculadoraTest {
 	@Before
 	public void before() {
 		calculadora = new Calculadora();
+		System.out.println("Iniciando...");
+	}
+	
+	@After
+	public void after() {
+		System.out.println("Finalizando...");
 	}
 	
 	@Test

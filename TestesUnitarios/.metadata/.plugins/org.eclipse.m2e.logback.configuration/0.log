@@ -3083,3 +3083,59 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.mockito:m
 2022-01-28 12:36:21,288 [Worker-35: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\test\resources
 2022-01-28 12:36:27,838 [Worker-28: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2022-01-28 12:36:27,839 [Worker-28: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\main\resources
+2022-01-28 12:36:27,840 [Worker-28: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 12:36:27,842 [Worker-28: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\test\resources
+2022-01-28 13:01:50,418 [Worker-44: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 13:01:50,420 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\main\resources
+2022-01-28 13:01:50,422 [Worker-44: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 13:01:50,423 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\test\resources
+2022-01-28 13:04:50,229 [Worker-40: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 13:04:50,232 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\main\resources
+2022-01-28 13:04:50,233 [Worker-40: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 13:04:50,234 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\test\resources
+2022-01-28 13:05:07,615 [Worker-46: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 13:05:07,617 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\main\resources
+2022-01-28 13:05:07,618 [Worker-46: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 13:05:07,619 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\test\resources
+2022-01-28 13:07:59,526 [Worker-40: Launching CalculadoraTest] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 13:07:59,528 [Worker-40: Launching CalculadoraTest] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\main\resources
+2022-01-28 13:07:59,530 [Worker-40: Launching CalculadoraTest] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 13:07:59,531 [Worker-40: Launching CalculadoraTest] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\test\resources
+2022-01-28 13:11:07,721 [Worker-49: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 13:11:07,722 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\main\resources
+2022-01-28 13:11:07,724 [Worker-49: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 13:11:07,726 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\test\resources
+2022-01-28 13:11:28,880 [Worker-45: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 13:11:28,881 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\main\resources
+2022-01-28 13:11:28,883 [Worker-45: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 13:11:28,884 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\test\resources
+2022-01-28 13:12:37,555 [Worker-50: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 13:12:37,556 [Worker-50: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\main\resources
+2022-01-28 13:12:37,557 [Worker-50: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 13:12:37,557 [Worker-50: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\test\resources
+2022-01-28 13:13:03,292 [Worker-40: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 13:13:03,294 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\main\resources
+2022-01-28 13:13:03,295 [Worker-40: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 13:13:03,296 [Worker-40: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\test\resources
+2022-01-28 13:13:18,710 [Worker-47: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 13:13:18,712 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\main\resources
+2022-01-28 13:13:18,712 [Worker-47: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 13:13:18,714 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\test\resources
+2022-01-28 13:13:36,229 [Worker-49: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 13:13:36,230 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\main\resources
+2022-01-28 13:13:36,230 [Worker-49: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 13:13:36,231 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\test\resources
+2022-01-28 13:14:54,551 [Worker-49: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 13:14:54,552 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\main\resources
+2022-01-28 13:14:54,553 [Worker-49: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 13:14:54,553 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\test\resources
+2022-01-28 13:15:00,702 [Worker-48: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 13:15:00,704 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\main\resources
+2022-01-28 13:15:00,705 [Worker-48: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 13:15:00,706 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\test\resources
+2022-01-28 13:15:13,001 [Worker-48: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 13:15:13,002 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\main\resources
+2022-01-28 13:15:13,003 [Worker-48: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 13:15:13,003 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\test\resources
+2022-01-28 13:15:43,851 [Worker-45: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 13:15:43,852 [Worker-45: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\main\resources
