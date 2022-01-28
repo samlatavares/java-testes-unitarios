@@ -1,0 +1,4 @@
+1643052180238	Rename method 'ehDataComDiferencaDias'
+1643232289234	Extract method 'calcularValorLocacao'
+1643323695027	Copy compilation unit
+1643327810040	Extract method 'obterData'

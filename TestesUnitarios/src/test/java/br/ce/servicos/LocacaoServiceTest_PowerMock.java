@@ -106,15 +106,15 @@ public class LocacaoServiceTest_PowerMock {
 		Usuario usuario = getUsuarioBuilder().agora();
 		List<Filme> filmes = Arrays.asList(new Filme("Pride and Prejudice", 1, 10.0));
 		
-//		PowerMockito.whenNew(Date.class).withNoArguments().thenReturn(DataUtils.obterData(28, 1, 2022));
+		PowerMockito.whenNew(Date.class).withNoArguments().thenReturn(DataUtils.obterData(28, 1, 2022));
 		
-		Calendar calendar = Calendar.getInstance();
-		calendar.set(Calendar.DAY_OF_MONTH, 28);
-		calendar.set(Calendar.MONTH, Calendar.JANUARY);
-		calendar.set(Calendar.YEAR, 2022);
-		
-		PowerMockito.mockStatic(Calendar.class);
-		PowerMockito.when(Calendar.getInstance()).thenReturn(calendar);
+//		Calendar calendar = Calendar.getInstance();
+//		calendar.set(Calendar.DAY_OF_MONTH, 28);
+//		calendar.set(Calendar.MONTH, Calendar.JANUARY);
+//		calendar.set(Calendar.YEAR, 2022);
+//		
+//		PowerMockito.mockStatic(Calendar.class);
+//		PowerMockito.when(Calendar.getInstance()).thenReturn(calendar);
 		
 		//act
 		Locacao locacao = service.alugarFilme(usuario, filmes);
@@ -122,17 +122,17 @@ public class LocacaoServiceTest_PowerMock {
 		//assert
 		error.checkThat(locacao.getValor(), is(equalTo(10.0)));
 		error.checkThat(locacao.getValor(), not(12.0));
-//		error.checkThat(locacao.getDataLocacao(), ehHoje());
+		error.checkThat(locacao.getDataLocacao(), ehHoje());
 		
 		error.checkThat(DataUtils.isMesmaData(locacao.getDataLocacao(), DataUtils.obterData(28, 1, 2022)), is(true));
 		error.checkThat(DataUtils.isMesmaData(locacao.getDataRetorno(), DataUtils.obterData(29, 1, 2022)), is(true));
 		
-//		Date dataAtual = new Date();
-//		if(DataUtils.verificarDiaSemana(dataAtual, Calendar.SATURDAY)) {
-//			error.checkThat(locacao.getDataRetorno(), ehHojeComDiferencaDias(2));
-//		} else {
-//			error.checkThat(locacao.getDataRetorno(), ehHojeComDiferencaDias(1));
-//		}
+		Date dataAtual = new Date();
+		if(DataUtils.verificarDiaSemana(dataAtual, Calendar.SATURDAY)) {
+			error.checkThat(locacao.getDataRetorno(), ehHojeComDiferencaDias(2));
+		} else {
+			error.checkThat(locacao.getDataRetorno(), ehHojeComDiferencaDias(1));
+		}
 	}	
 	
 	@Test
@@ -144,22 +144,22 @@ public class LocacaoServiceTest_PowerMock {
 		Usuario usuario = getUsuarioBuilder().agora();
 		List<Filme> filmes = Arrays.asList(new Filme("Pride and Prejudice", 1, 10.0));
 		
-//		PowerMockito.whenNew(Date.class).withNoArguments().thenReturn(DataUtils.obterData(29, 1, 2022));
+		PowerMockito.whenNew(Date.class).withNoArguments().thenReturn(DataUtils.obterData(29, 1, 2022));
 		
-		Calendar calendar = Calendar.getInstance();
-		calendar.set(Calendar.DAY_OF_MONTH, 29);
-		calendar.set(Calendar.MONTH, Calendar.JANUARY);
-		calendar.set(Calendar.YEAR, 2022);
-		
-		PowerMockito.mockStatic(Calendar.class);
-		PowerMockito.when(Calendar.getInstance()).thenReturn(calendar);
+//		Calendar calendar = Calendar.getInstance();
+//		calendar.set(Calendar.DAY_OF_MONTH, 29);
+//		calendar.set(Calendar.MONTH, Calendar.JANUARY);
+//		calendar.set(Calendar.YEAR, 2022);
+//		
+//		PowerMockito.mockStatic(Calendar.class);
+//		PowerMockito.when(Calendar.getInstance()).thenReturn(calendar);
 		
 		//act
 		Locacao locacao = service.alugarFilme(usuario, filmes);
 		
 		//assert		
 		assertThat(locacao.getDataRetorno(), caiNumaSegunda());
-//		PowerMockito.verifyNew(Date.class, Mockito.times(2)).withNoArguments();
+		PowerMockito.verifyNew(Date.class, Mockito.times(2)).withNoArguments();
 		
 		PowerMockito.verifyStatic(Mockito.times(2));
 		Calendar.getInstance();

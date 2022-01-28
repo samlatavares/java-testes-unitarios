@@ -11,8 +11,8 @@ import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.when;
 
+import java.lang.reflect.Method;
 import java.util.Arrays;
-import java.util.Calendar;
 import java.util.List;
 
 import org.junit.After;
@@ -30,8 +30,6 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.Spy;
-import org.mockito.internal.util.reflection.Whitebox;
-import org.powermock.api.mockito.PowerMockito;
 
 import br.ce.builders.LocacaoBuilder;
 import br.ce.daos.LocacaoDAO;
@@ -262,31 +260,18 @@ public class LocacaoServiceTest {
 	}
 	
 	@Test
-	public void deveAlugarFilmeSemCalcularOValor() throws Exception {
-		//arrange
-		Usuario usuario = getUsuarioBuilder().agora();
-		List<Filme> filmes = Arrays.asList(new Filme("Pride and Prejudice", 1, 10.0));
-		
-		PowerMockito.doReturn(1.0).when(service, "calcularValorLocacao", filmes); // Mockando o retorno do método
-			
-		//act
-		Locacao locacao = service.alugarFilme(usuario, filmes);
-		
-		//assert
-		Assert.assertThat(locacao.getValor(), is(1.0));
-		PowerMockito.verifyPrivate(service).invoke("calcularValorLocacao", filmes); //Verificando se o método foi chamado
-	}
-	
-	@Test
 	public void deveCalcularValorLocacao() throws Exception {
 		//arrange
 		List<Filme> filmes = Arrays.asList(new Filme("Pride and Prejudice", 1, 10.0));
 		
 		//act
-		//Double valor = (Double)Whitebox.invokeMethod(service, "calcularValorLocacao", filmes);
+		Class<LocacaoService> clazz = LocacaoService.class;
+		Method metodo = clazz.getDeclaredMethod("calcularValorLocacao", List.class);
+		metodo.setAccessible(true);
+		Double valor = (Double) metodo.invoke(service, filmes);
 		
 		//assert
-		//Assert.assertThat(valor, is(10.0));
+		Assert.assertThat(valor, is(10.0));
 		
 	}
 	

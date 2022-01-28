@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="SuiteExecucao" project="TestesUnitarios" tests="15" started="15" failures="0" errors="0" ignored="0">
+  <testsuite name="br.ce.suites.SuiteExecucao" time="0.385">
+    <testsuite name="br.ce.servicos.CalculoValorLocacaoTest" time="0.302">
+      <testsuite name="[3 Filmes: 25%]" time="0.296">
+        <testcase name="deveCalcularValorLocacaoConsiderandoDescontos[3 Filmes: 25%]" classname="br.ce.servicos.CalculoValorLocacaoTest" time="0.296"/>
+      </testsuite>
+      <testsuite name="[4 Filmes: 50%]" time="0.001">
+        <testcase name="deveCalcularValorLocacaoConsiderandoDescontos[4 Filmes: 50%]" classname="br.ce.servicos.CalculoValorLocacaoTest" time="0.001"/>
+      </testsuite>
+      <testsuite name="[5 Filmes: 75%]" time="0.002">
+        <testcase name="deveCalcularValorLocacaoConsiderandoDescontos[5 Filmes: 75%]" classname="br.ce.servicos.CalculoValorLocacaoTest" time="0.002"/>
+      </testsuite>
+      <testsuite name="[6 Filmes: 100%]" time="0.001">
+        <testcase name="deveCalcularValorLocacaoConsiderandoDescontos[6 Filmes: 100%]" classname="br.ce.servicos.CalculoValorLocacaoTest" time="0.001"/>
+      </testsuite>
+      <testsuite name="[7 Filmes: Sem Desconto]" time="0.001">
+        <testcase name="deveCalcularValorLocacaoConsiderandoDescontos[7 Filmes: Sem Desconto]" classname="br.ce.servicos.CalculoValorLocacaoTest" time="0.001"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="br.ce.servicos.LocacaoServiceTest" time="0.081">
+      <testcase name="naoDeveAlugarFilmeSemFilme" classname="br.ce.servicos.LocacaoServiceTest" time="0.038"/>
+      <testcase name="deveAlugarFilmeComSucesso" classname="br.ce.servicos.LocacaoServiceTest" time="0.01"/>
+      <testcase name="naoDeveAlugarFilmeSemEstoque" classname="br.ce.servicos.LocacaoServiceTest" time="0.001"/>
+      <testcase name="deveProrrogarUmaLocacao" classname="br.ce.servicos.LocacaoServiceTest" time="0.015"/>
+      <testcase name="deveTratarErroNoSPC" classname="br.ce.servicos.LocacaoServiceTest" time="0.003"/>
+      <testcase name="deveEnviarEmailParaLocacoesAtrasadas" classname="br.ce.servicos.LocacaoServiceTest" time="0.007"/>
+      <testcase name="naoDeveAlugarFilmeParaNegativadoSPC" classname="br.ce.servicos.LocacaoServiceTest" time="0.002"/>
+      <testcase name="deveDevolverNaSegundaAoAlugarNoSabado" classname="br.ce.servicos.LocacaoServiceTest" time="0.003"/>
+      <testcase name="naoDeveAlugarFilmeSemUsuario" classname="br.ce.servicos.LocacaoServiceTest" time="0.001"/>
+      <testcase name="deveCalcularValorLocacao" classname="br.ce.servicos.LocacaoServiceTest" time="0.001"/>
+    </testsuite>
+  </testsuite>
+</testrun>
