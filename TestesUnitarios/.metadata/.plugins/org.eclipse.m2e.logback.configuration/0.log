@@ -3349,3 +3349,13 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: end tag nam
 2022-01-28 19:20:56,632 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\main\resources
 2022-01-28 19:20:56,634 [Worker-12: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2022-01-28 19:20:56,635 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\test\resources
+2022-01-28 19:42:08,298 [Worker-10: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 19:42:08,299 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\main\resources
+2022-01-28 19:42:08,301 [Worker-10: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 19:42:08,302 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\test\resources
+2022-01-28 19:43:31,772 [Worker-22: Launching Executing test in C__Git_java-testes-unitarios_TestesUnitarios] INFO  o.e.m.i.launch.MavenLaunchDelegate - C:\Git\java-testes-unitarios\TestesUnitarios
+2022-01-28 19:43:31,774 [Worker-22: Launching Executing test in C__Git_java-testes-unitarios_TestesUnitarios] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B test
+2022-01-28 19:43:34,683 [Worker-22: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 19:43:34,684 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\main\resources
+2022-01-28 19:43:34,686 [Worker-22: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-01-28 19:43:34,686 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Git\java-testes-unitarios\TestesUnitarios\src\test\resources
