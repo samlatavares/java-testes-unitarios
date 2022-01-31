@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename method &apos;br.ce.entidades.Locacao.setFilme(...)&apos; to &apos;setFilmes&apos;&#x0D;&#x0A;- Original project: &apos;TestesUnitarios&apos;&#x0D;&#x0A;- Original element: &apos;br.ce.entidades.Locacao.setFilme(...)&apos;&#x0D;&#x0A;- Renamed element: &apos;br.ce.entidades.Locacao.setFilmes(...)&apos;&#x0D;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;setFilme&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.method" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;br.ce.entidades{Locacao.java[Locacao~setFilme~QList\&lt;QFilme;&gt;;" name="setFilmes" references="true" stamp="1641758378486" version="1.0"/>
-</session>
