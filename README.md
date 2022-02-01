@@ -38,3 +38,18 @@ Project made during "<a href="https://www.udemy.com/course/testes-unitarios-em-j
 	- TimerService: A service with a method for get the current date. Can be used as a workaround to mock the current date with Mockito.
 
 #### br.ce.utils
+- Contains the Utility classes.
+	- DataUtils: A Utility Date class.
+	
+### src/test
+- Package that contains all unit tests classes.
+
+#### br.ce.builders
+
+#### br.ce.runners
+
+#### br.ce.servicos
+
+#### br.ce.servicos.matchers
+
+#### br.ce.suites
