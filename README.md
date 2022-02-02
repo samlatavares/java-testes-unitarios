@@ -1,5 +1,5 @@
 # java-testes-unitarios
-Project made during "<a href="https://www.udemy.com/course/testes-unitarios-em-java/" target="_blank">Unit Tests in Java: Master JUnit, Mockito and TDD</a>" course on Udemy. It's a Java Project with Unit Testing using JUnit and other technologies detailed below. The basis project were made available by the tutor.
+Project made during "<a href="https://www.udemy.com/course/testes-unitarios-em-java/" target="_blank">Unit Tests in Java: Master JUnit, Mockito and TDD</a>" course on Udemy. It's a Java Project with Unit Testing using JUnit and other technologies detailed below. The basis project were made available by the tutor and is a Movie Rent project.
 
 ## Used Technologies
 - Java Language.
@@ -45,11 +45,19 @@ Project made during "<a href="https://www.udemy.com/course/testes-unitarios-em-j
 - Package that contains all unit tests classes.
 
 #### br.ce.builders
-
+- Contains all Data Builders of the Entities.
+	- FilmeBuilder: Movie builder.
+	- LocacaoBuilder: Rent builder.
+	- UsuarioBuilder: User builder.
+	
 #### br.ce.runners
+- Contains the runners implementations.
+	- ParallelRunner: Contains an example of an implementantion that can be used to run Parallel Tests.
 
 #### br.ce.servicos
 
 #### br.ce.servicos.matchers
+- Contains all custom matchers that can be used on the tests asserts.
 
 #### br.ce.suites
+- Contains a Tests Suite that runs all tests from CalculoValorLocacaoTest and LocacaoServiceTest classes.
