@@ -57,5 +57,7 @@ Project made during "<a href="https://www.udemy.com/course/testes-unitarios-em-j
 #### br.ce.servicos
 
 #### br.ce.servicos.matchers
+- Contains all custom matchers that can be used on the tests asserts.
 
 #### br.ce.suites
+- Contains a Tests Suite that runs all tests from CalculoValorLocacaoTest and LocacaoServiceTest classes.
