@@ -47,8 +47,12 @@ Project made during "<a href="https://www.udemy.com/course/testes-unitarios-em-j
 #### br.ce.builders
 - Contains all Data Builders of the Entities.
 	- FilmeBuilder: Movie builder.
-	- LocacaoBuilder: Rent builder
+	- LocacaoBuilder: Rent builder.
+	- UsuarioBuilder: User builder.
+	
 #### br.ce.runners
+- Contains the runners implementations.
+	- ParallelRunner: Contains an example of an implementantion that can be used to run Parallel Tests.
 
 #### br.ce.servicos
 
