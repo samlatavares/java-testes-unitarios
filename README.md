@@ -55,6 +55,11 @@ Project made during "<a href="https://www.udemy.com/course/testes-unitarios-em-j
 	- ParallelRunner: Contains an example of an implementantion that can be used to run Parallel Tests.
 
 #### br.ce.servicos
+- Contains all test classes.
+	- CalculadoraMockTest: Contains some examples of how Spy and Mock Annotations works.
+	- CalculadoraTest: Contains the tests of the Calculadora class.
+	- CalculoValorLocacaoTest: Contains the test of the rent calculus.
+	- LocacaoServiceTest
 
 #### br.ce.servicos.matchers
 - Contains all custom matchers that can be used on the tests asserts.
