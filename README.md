@@ -9,6 +9,11 @@ Project made during "<a href="https://www.udemy.com/course/testes-unitarios-em-j
 - Maven.
 
 ## Structure
+
+### Disclaimer
+- I kept some commented code because this is a project made during classes and these code contains diferent forms to write a code that is working.
+- I thought this could be important to review the content that I've learned.
+
 ### src/main
 - Main package that contains DAOs, Services and more.
 
@@ -57,9 +62,10 @@ Project made during "<a href="https://www.udemy.com/course/testes-unitarios-em-j
 #### br.ce.servicos
 - Contains all test classes.
 	- CalculadoraMockTest: Contains some examples of how Spy and Mock Annotations works.
-	- CalculadoraTest: Contains the tests of the Calculadora class.
+	- CalculadoraTest: Contains the tests of the Calculadora (Calculator) class.
 	- CalculoValorLocacaoTest: Contains the test of the rent calculus.
-	- LocacaoServiceTest
+	- LocacaoServiceTest: Contains all tests of the LocacaoService (rent) class.
+	- LocacaoServiceTest_PowerMock: Contains examples of methods of the LocacaoServiceTest that could use PowerMock.	
 
 #### br.ce.servicos.matchers
 - Contains all custom matchers that can be used on the tests asserts.
