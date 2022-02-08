@@ -3,9 +3,9 @@
 	<a href="https://github.com/samlatavares/java-testes-unitarios/blob/main/README.md">English</a> | <span>Português</span>
 </p>
 
-Project made during "<a href="https://www.udemy.com/course/testes-unitarios-em-java/" target="_blank">Unit Tests in Java: Master JUnit, Mockito and TDD</a>" course on Udemy. It's a Java Project with Unit Testing using JUnit and other technologies detailed below. The basis project were made available by the tutor and is a Movie Rent project.
+Projeto feito durante o curso "<a href="https://www.udemy.com/course/testes-unitarios-em-java/" target="_blank">Testes unitários em JAVA: Domine JUnit, Mockito e TDD</a>" da Udemy. É um projeto Java com testes unitários utilizando JUnit e outras tecnologias detalhadas abaixo. O projeto base foi disponibilizado pelo professor e é um projeto de locação de filmes.
 
-## Used Technologies
+## Tecnologias Utilizadas
 - Java Language.
 - JUnit.
 - Mockito.
