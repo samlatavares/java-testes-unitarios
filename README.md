@@ -13,6 +13,11 @@ Project made during "<a href="https://www.udemy.com/course/testes-unitarios-em-j
 - Maven.
 
 ## Structure
+
+### Disclaimer
+- I kept some commented code because this is a project made during classes and these code contains diferent forms to write a code that is working.
+- I thought this could be important to review the content that I've learned.
+
 ### src/main
 - Main package that contains DAOs, Services and more.
 
@@ -49,11 +54,25 @@ Project made during "<a href="https://www.udemy.com/course/testes-unitarios-em-j
 - Package that contains all unit tests classes.
 
 #### br.ce.builders
-
+- Contains all Data Builders of the Entities.
+	- FilmeBuilder: Movie builder.
+	- LocacaoBuilder: Rent builder.
+	- UsuarioBuilder: User builder.
+	
 #### br.ce.runners
+- Contains the runners implementations.
+	- ParallelRunner: Contains an example of an implementantion that can be used to run Parallel Tests.
 
 #### br.ce.servicos
+- Contains all test classes.
+	- CalculadoraMockTest: Contains some examples of how Spy and Mock Annotations works.
+	- CalculadoraTest: Contains the tests of the Calculadora (Calculator) class.
+	- CalculoValorLocacaoTest: Contains the test of the rent calculus.
+	- LocacaoServiceTest: Contains all tests of the LocacaoService (rent) class.
+	- LocacaoServiceTest_PowerMock: Contains examples of methods of the LocacaoServiceTest that could use PowerMock.	
 
 #### br.ce.servicos.matchers
+- Contains all custom matchers that can be used on the tests asserts.
 
 #### br.ce.suites
+- Contains a Tests Suite that runs all tests from CalculoValorLocacaoTest and LocacaoServiceTest classes.
