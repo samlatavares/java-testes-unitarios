@@ -3,7 +3,7 @@
 	<span>English</span> | <a href="https://github.com/samlatavares/java-testes-unitarios/blob/main/translations/pt-br/README.md">Português</a>
 </p>
 
-Project made during "<a href="https://www.udemy.com/course/testes-unitarios-em-java/" target="_blank">Unit Tests in Java: Master JUnit, Mockito and TDD</a>" course on Udemy. It's a Java Project with Unit Testing using JUnit and other technologies detailed below. The basis project were made available by the tutor and is a Movie Rent project.
+Project made during "<a href="https://www.udemy.com/course/testes-unitarios-em-java/" target="_blank">Unit Tests in Java: Master JUnit, Mockito and TDD</a>" course on Udemy. It's a Java Project with Unit Testing using JUnit and other technologies detailed below. The basis project were made available by the tutor.
 
 ## Used Technologies
 - Java Language.
