@@ -15,8 +15,8 @@ Projeto feito durante o curso "<a href="https://www.udemy.com/course/testes-unit
 ## Structure
 
 ### Disclaimer
-- I kept some commented code because this is a project made during classes and these code contains diferent forms to write a code that is working.
-- I thought this could be important to review the content that I've learned.
+- Eu mantive alguns trechos de código comentados porque esse foi um projeto feito durante um curso e esse código comentado contém formas diferentes de escrever o código que está rodando.
+- Eu pensei que isso seria importante para revisar o conteúdo que aprendi.
 
 ### src/main
 - Main package that contains DAOs, Services and more.
