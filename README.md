@@ -22,7 +22,7 @@ Project made during "<a href="https://www.udemy.com/course/testes-unitarios-em-j
 - Main package that contains DAOs, Services and more.
 
 #### br.ce.daos
-- Contains DAOs examples but how this was a project made to pratice Unit Testing, they are really simple.
+- Contains DAOs examples but, how this was a project made to pratice Unit Testing, they are really simple.
 	- LocacaoDAO: Interface of a rent class that will be mocked.
 	- LocacaoDAOFake: Example of the rent class DAO implementantion.
 	
