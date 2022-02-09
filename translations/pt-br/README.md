@@ -12,25 +12,25 @@ Projeto feito durante o curso "<a href="https://www.udemy.com/course/testes-unit
 - PowerMock.
 - Maven.
 
-## Structure
+## Estrutura
 
-### Disclaimer
+### Importante
 - Eu mantive alguns trechos de código comentados porque esse foi um projeto feito durante um curso e esse código comentado contém formas diferentes de escrever o código que está rodando.
 - Eu pensei que isso seria importante para revisar o conteúdo que aprendi.
 
 ### src/main
-- Main package that contains DAOs, Services and more.
+- Pacote principal que contém DAOs, serviços entre outros.
 
 #### br.ce.daos
-- Contains DAOs examples, but this is a project made to pratice Unit Testing they are really simple.
-	- LocacaoDAO: Interface of a rent class that will be mocked.
-	- LocacaoDAOFake: Example of the rent class DAO implementantion.
+- Contém exemplos de DAOs, mas como esse foi um projeto para praticar Testes Unitários, eles são bem simples.
+	- LocacaoDAO: Interface do DAO da classe de locação que será "mockada".
+	- LocacaoDAOFake: Examplo da implementação do DAO da classe de locação.
 	
 #### br.ce.entidades
-- Contains all entities of the project.
-	- Filme: Movie Entity.
-	- Locacao: Movie rental Entity.
-	- Usuario: User Entity.
+- Contém todas as entidades do projeto.
+	- Filme.
+	- Locacao.
+	- Usuario.
 		
 #### br.ce.exceptions
 - Contains custom Exceptions.
