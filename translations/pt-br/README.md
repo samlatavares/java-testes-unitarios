@@ -33,18 +33,18 @@ Projeto feito durante o curso "<a href="https://www.udemy.com/course/testes-unit
 	- Usuario.
 		
 #### br.ce.exceptions
-- Contains custom Exceptions.
-	- FilmeSemEstoqueException: Used when the movie that the User are trying to rent is sold out.
-	- LocadoraException: Used to indicate that something went wrong during the rent process.
-	- NaoPodeDividirPorZeroException: Used when there are a division per zero during the rent calculus.
+- Contém exceções customizadas.
+	- FilmeSemEstoqueException: Utilizada quando o filme que o usuário está tentando alugar está esgotado.
+	- LocadoraException: Utilizada para indicar que algo deu errado durante o processo de aluguel.
+	- NaoPodeDividirPorZeroException: Utilizada quando há uma divisão por zero durante o cálculo do aluguel.
 
 #### br.ce.services
-- Contains all the logic.
-	- Calculadora: A Calculador example, showing the main operations and using some custom exceptions.
-	- EmailService: A interface to simulate the Email operations.
-	- LocacaoService: A class with all rent operations.
-	- SPCService: A interface to simulate a service that consults SPC Database to check if the user have credit restrictions.
-	- TimerService: A service with a method for get the current date. Can be used as a workaround to mock the current date with Mockito.
+- Contém toda a lógica.
+	- Calculadora: Um exemplo de calculadora, mostrando as principais operações e utilizando exceções customizadas.
+	- EmailService: Uma interface para simular as operações de e-mail.
+	- LocacaoService: Uma classe com todas as operações de aluguel.
+	- SPCService: Uma interface para simular um serviço que consulta a base de dados to SPC para verificar se o usuário possui restrições de crédito.
+	- TimerService: Um serviço com um método para recuperar a data atual. Pode ser usado como uma alternativa para "mockar" a data atual utilizando o Mockito.
 
 #### br.ce.utils
 - Contains the Utility classes.
