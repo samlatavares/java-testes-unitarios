@@ -47,11 +47,11 @@ Projeto feito durante o curso "<a href="https://www.udemy.com/course/testes-unit
 	- TimerService: Um serviço com um método para recuperar a data atual. Pode ser usado como uma alternativa para "mockar" a data atual utilizando o Mockito.
 
 #### br.ce.utils
-- Contains the Utility classes.
-	- DataUtils: A Utility Date class.
+- Contém as classes utilitárias.
+	- DataUtils.
 	
 ### src/test
-- Package that contains all unit tests classes.
+- Pacote que contém todas as classes com os Testes de Unidade.
 
 #### br.ce.builders
 - Contains all Data Builders of the Entities.
