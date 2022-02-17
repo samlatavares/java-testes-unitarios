@@ -54,14 +54,14 @@ Projeto feito durante o curso "<a href="https://www.udemy.com/course/testes-unit
 - Pacote que contém todas as classes com os Testes de Unidade.
 
 #### br.ce.builders
-- Contains all Data Builders of the Entities.
-	- FilmeBuilder: Movie builder.
-	- LocacaoBuilder: Rent builder.
-	- UsuarioBuilder: User builder.
+- Contém todos os Data Builders das entidades.
+	- FilmeBuilder.
+	- LocacaoBuilder.
+	- UsuarioBuilder.
 	
 #### br.ce.runners
-- Contains the runners implementations.
-	- ParallelRunner: Contains an example of an implementantion that can be used to run Parallel Tests.
+- Contém as implementações dos Runners.
+	- ParallelRunner: Contém um exemplo de implementação que pode ser utilizada para executar Testes Paralelos.
 
 #### br.ce.servicos
 - Contains all test classes.
