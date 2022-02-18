@@ -64,12 +64,12 @@ Projeto feito durante o curso "<a href="https://www.udemy.com/course/testes-unit
 	- ParallelRunner: Contém um exemplo de implementação que pode ser utilizada para executar Testes Paralelos.
 
 #### br.ce.servicos
-- Contains all test classes.
-	- CalculadoraMockTest: Contains some examples of how Spy and Mock Annotations works.
-	- CalculadoraTest: Contains the tests of the Calculadora (Calculator) class.
-	- CalculoValorLocacaoTest: Contains the test of the rent calculus.
-	- LocacaoServiceTest: Contains all tests of the LocacaoService (rent) class.
-	- LocacaoServiceTest_PowerMock: Contains examples of methods of the LocacaoServiceTest that could use PowerMock.	
+- Contém todas as classes de testes.
+	- CalculadoraMockTest: Contém alguns exemplos de como Spy e Mock Annotations funcionam.
+	- CalculadoraTest: Contém os testes da classe Calculadora.
+	- CalculoValorLocacaoTest: Contém os testes de cálculo da classe Locacao.
+	- LocacaoServiceTest: Contém os testes da classe Locacao.
+	- LocacaoServiceTest_PowerMock: Contém exemplos de métodos da classe LocacaoServiceTest que poderiam utilizar PowerMock.	
 
 #### br.ce.servicos.matchers
 - Contains all custom matchers that can be used on the tests asserts.
