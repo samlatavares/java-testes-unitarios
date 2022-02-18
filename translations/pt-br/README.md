@@ -72,7 +72,7 @@ Projeto feito durante o curso "<a href="https://www.udemy.com/course/testes-unit
 	- LocacaoServiceTest_PowerMock: Contém exemplos de métodos da classe LocacaoServiceTest que poderiam utilizar PowerMock.	
 
 #### br.ce.servicos.matchers
-- Contains all custom matchers that can be used on the tests asserts.
+- Contém todos os matchers customizados que podem ser utilizados nas assertivas dos testes.
 
 #### br.ce.suites
-- Contains a Tests Suite that runs all tests from CalculoValorLocacaoTest and LocacaoServiceTest classes.
+- Contém um Suite de testes que roda todos os testes das classes CalculoValorLocacaoTest e LocacaoServiceTest.
